@@ -1,5 +1,5 @@
 # MPN_atlas_methods
-Source code for methods for A Dynamic Pre-Leukemia Stem Cell Atlas of Myeloproliferative Neoplasm Evolution
+Documented source code for methods for A Dynamic Pre-Leukemia Stem Cell Atlas of Myeloproliferative Neoplasm Evolution
 
 Interactive network visualizations are hosted on NDex and can be viewed by following the links below. 
 
