@@ -3,7 +3,7 @@
 * **Methods document by Amanda Birmingham**
 * **Center for Computational Biology & Bioinformatics, University of California, San Diego**
  
-Each sample is represented by one pair of forward- and reverse-read fastq files.  `$rootdir` is the directory on the system where the software tools are installed, `$resource` is the directory where tool resources such as indices and genome files are stored, and `$workspace` is the working directory for the analysis. The below steps are bash scripts designed to be run from the command line on Ubuntu Linux 14.04 or higher.
+Each sample is represented by one pair of forward- and reverse-read fastq files.  `$rootdir` is the directory on the system where the software tools are installed, `$resource` is the directory where tool resources such as indices and genome files are stored, and `$workspace` is the working directory for the analysis. The below steps are bash scripts designed to be run from the command line on Ubuntu Linux 14.04 or higher.  Elements of this approach were adapted from Ramaswami G, Lin W, Piskol R, Tan MH, Davis C, Li JB. Accurate identification of human Alu and non-Alu RNA editing sites. Nat Methods. 2012 Jun;9(6):579-81.
 
 Begin by setting up the variables:
 	
@@ -263,7 +263,6 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			
 10. For later use, capture variants whose locations are in known Alu elements as well as those whose locations both are within Alu elements and are known to be rna-editing sites:
 		
-		# TODO: Ask Adam precisely where this is used; can't find in dnamethod file
 		# capture in VCF format ALL SNPiR-filtered variants in known Alu elements 
 		# (not only those variants at known RNA-editing sites);
 		# save these for later, when they will be used in identifying novel RNA editing sites
@@ -285,7 +284,6 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			| uniq \
 			> $workspace/"$sample"_alu_rnaedit_sites.txt 
 		
-		# TODO: Ask Adam where these are used
 		# capture in VCF format those SNPiR-filtered variants that are 
 		# in known Alu elements AND at known rna-editing sites
 		awk '{OFS="\t";print $1,$2,$2}' $workspace/"$sample"_alu_rnaedit_sites.txt | \
@@ -310,8 +308,6 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 
 12. Further filter the variants not in known Alu elements:
 						
-		# TODO: Verify with Adam that the filters below here are applied 
-		# ONLY to variants at non-alu sites
 		# filter out variants in simple repeat regions
 		awk '{OFS="\t";$2=$2-1"\t"$2;print $0}' \
 			$workspace/"$sample"_raw_variants.rmhex.nonalu.txt | \
@@ -362,7 +358,6 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			| uniq \
 			> $workspace/"$sample"_nonalu_rnaseq_vars.vcf 
 
-		# TODO: Ask Adam why earlier filtering for alu+rnaedit had uniq filter while this doesn't
 		# filter out of the list of additionally filtered variants not in known Alu elements those 
 		# that are also not at known rna-editing sites
 		# Note $rnaEditDB is the radar and darned databases concatenated
@@ -385,15 +380,15 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			| uniq \
 			> $workspace/"$sample"_nonalu_rnaedit_sites.vcf
 
-14. In the remainder of this pipeline, combine the RNA variant analysis performed above with the DNA variant analysis described elsewhere to further stratify the list of potential editing sites (TODO: Ask Adam whether it is germline or somatic); begin by ensuring you have the necessary files:
-	1. The per-chromosome bed files (TODO: Ask Adam precisely what is in these bed files) for this sample for all 24 chromosomes (1-22, X, and Y).  These should be named in the format `"$dna_sample"-PB."$chr".bed` (for example, `mysample1-PB.14.bed` for chromosome 14 of the sample `mysample1`).
-	2. The gzipped vcf file containing the variants identified in the DNA for this sample.  This should be named in the format `"$dna_sample"-PB.raw.vcf.gz` (for example, `mysample1-PB.raw.vcf.gz` for the sample `mysample1`).
+14. In the remainder of this pipeline, combine the RNA variant analysis performed above with the DNA somatic (tumor) variant analysis described elsewhere to further stratify the list of potential editing sites; begin by ensuring you have the necessary files:
+	1. The per-chromosome bed files including coverage statistics for the assessed genomic intervals for all 24 chromosomes (1-22, X, and Y).  These should be named in the format `"$dna_sample"-PB."$chr".bed` (for example, `mysample1-PB.14.bed` for chromosome 14 of the sample `mysample1`).
+	2. The gzipped vcf file this sample's DNA variants.  This should be named in the format `"$dna_sample"-PB.raw.vcf.gz` (for example, `mysample1-PB.raw.vcf.gz` for the sample `mysample1`).
 	
 15. Index the sample's bam file:
 
 		samtools index $bqsr_bam
 		
-16. Filter the per-chromosome bed files to remove any TODO:regions?? with a read depth of less than five reads, and condense the remaining TODO:regions?? into a single file:
+16. Filter the per-chromosome bed files to remove any intervals with a read depth of less than five reads, and condense the remaining intervals into a single file:
 
 		# Only consider sites where DNA coverage is greater than 4 reads 
 		for chr in {1..22} X Y; do
@@ -404,14 +399,14 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 		
 		cat $workspace/"$dna_sample"-PB.*.filt.bed > $workspace/"$dna_sample"-PB.filt.bed
 
-17. Identify variants whose locations both are in known Alu elements and are covered in the DNA sequencing to at least the minimum read depth: TODO: change alu_regions.txt to alu_sites.txt from here down
+17. Identify variants whose locations both are in known Alu elements and are covered in the DNA sequencing to at least the minimum read depth:
 
 		# filter out of the list of variants in known Alu elements those 
 		# that are not in the list of sites with adequate DNA read depth
 		$intersectBed \
 				-v \
 				-header \
-				-a $workspace/"$sample"_alu_regions.txt \
+				-a $workspace/"$sample"_alu_sites.txt \
 				-b $workspace/"$dna_sample-PB".filt.bed \
 				> $workspace/"$sample"_alu.mincov.txt
 
@@ -440,8 +435,6 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			-a $gatk_filt_vcf.pass \
 			-b stdin \
 			> $workspace/"$sample"_rna_edit.alu.vcf
-
-		# TODO: Doesn't it seem like these files could use better names?
 
 19. Repeat the filtering commands in step 12 but replace the input `"$sample"_raw_variants.rmhex.nonalu.txt` with the earlier-produced input `"$sample"_raw_variants.rmhex.txt` that does NOT exclude variants in known Alu elements.  To reflect this, elide `nonalu` from the names of all output files produced in this re-run.  Thus, the output of this work will be a file of the name format `"$sample"_raw_variants.rmhex.rmsk.rmintron.rmhom.rmblat.txt`.
 20. For later use, capture variants whose locations both are in known Alu elements and are covered in the DNA sequencing to at least the minimum read depth, but whose genomic locations were NOT found to contain DNA variants:
@@ -481,12 +474,9 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			-b stdin \
 			> $workspace/"$sample"_rna_edit.final.vcf
 			
-		# TODO: Doesn't it seem like these files could use better names?
-
 	
-There is now a suite of vcf files for each sample.  
+There is now a suite of vcf files for each sample to be used in further analysis.  
 
-# TODO: Ask Adam what has replaced Annovar!
 
 ## Software References
 
