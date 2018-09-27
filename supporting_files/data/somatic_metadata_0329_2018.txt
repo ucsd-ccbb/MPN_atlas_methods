@@ -1,0 +1,47 @@
+Patient	Risk	Diagnosis	Mutation 1	Mutation 2	Treatment	Treatment_Type	Samples available	known progression	rnaediting
+727	AP CML	AP CML	BCR-ABL			no treatment or hydroxyurea	PB+S		yes
+743	CLL	CLL	CLL			no treatment or hydroxyurea	PB+S		
+607	CML	CML	BCR-ABL			no treatment or hydroxyurea	PB+S		
+726	CP CML	CP CML	BCR-ABL	CALR+		no treatment or hydroxyurea	PB+S	post-ET	
+725	Essential Thrombocythemia	ET	V617F+	CALR+		no treatment or hydroxyurea	PB+S	post-PV	yes
+289	Essential Thrombocythemia	ET	V617F+			no treatment or hydroxyurea	PB+S		
+641	Essential Thrombocythemia	ET	V617F+			no treatment or hydroxyurea	PB+S	post-ET	
+731	Essential Thrombocythemia	ET	V617F-			no treatment or hydroxyurea	PB+S		
+576	High Risk Myelofibrosis	MF	V617F+	CALR-	pacritinib	Jak2 Inhibitor	PB+S	post-PV	yes
+580	Intermediate Risk Myelofibrosis	MF	V617F+		Jakafi	Jak2 Inhibitor	PB+S		yes
+600	High Risk Myelofibrosis	MF	V617F+		Jakafi	Jak2 Inhibitor	PB+S	post-ET	yes
+668	Intermediate Risk Myelofibrosis	MF	V617F+	CALR-	Jakafi	Jak2 Inhibitor	PB+S		yes
+721	Intermediate Risk Myelofibrosis	MF	V617F+	CALR-	Jakafi	Jak2 Inhibitor	PB+S		yes
+744	High Risk Myelofibrosis	MF	V617F+		Jakafi	Jak2 Inhibitor	PB+S	post-PV	yes
+767	Intermediate Risk Myelofibrosis	MF	V617F+		hydroxyurea	no treatment or hydroxyurea	PB+S		yes
+623	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+627	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+670	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S	post-PV	
+705	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+729	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+739	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+742	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+747	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+749	High Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S	post-ET	
+753	Intermediate Risk Myelofibrosis	MF	V617F+	CALR-		no treatment or hydroxyurea	PB+S		
+758	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+765	Intermediate Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S	post-PV	
+567	High Risk Myelofibrosis	MF	V617F-		pacritinib	Jak2 Inhibitor	PB+S	post-PV	yes
+662	Intermediate Risk Myelofibrosis	MF	V617F-	CALR+		no treatment or hydroxyurea	PB+S		yes
+664	Intermediate Risk Myelofibrosis	MF	V617F-	CALR-	hydroxyurea	no treatment or hydroxyurea		post-ET	yes
+690	Myelofibrosis	MF	V617F-			no treatment or hydroxyurea	PB+S		yes
+574	Intermediate Risk Myelofibrosis	MF	V617F-			no treatment or hydroxyurea	PB+S		
+624	High Risk Myelofibrosis	MF	V617F-			no treatment or hydroxyurea	PB+S		
+707	Intermediate Risk Myelofibrosis	MF	V617F-			no treatment or hydroxyurea	PB 		
+733	Intermediate Risk Myelofibrosis	MF	V617F-			no treatment or hydroxyurea	PB+S		
+734	High Risk Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+787	Myelofibrosis	MF	V617F+			no treatment or hydroxyurea	PB+S		
+780	Normal Control	Normal	Normal			no treatment or hydroxyurea	PB+S	post-PV	
+792	Normal Control	Normal	Normal			no treatment or hydroxyurea	PB+S	post-ET	
+795	Normal Control	Normal	Normal			no treatment or hydroxyurea	PB+S		
+542	Polycythemia Vera	PV	V617F+			no treatment or hydroxyurea	PB		
+584	Polycythemia Vera	PV	V617F+			no treatment or hydroxyurea	PB+S		
+636	Polycythemia Vera	PV	V617F+			no treatment or hydroxyurea	PB+S		
+728	Polycythemia Vera	PV	V617F+			no treatment or hydroxyurea	PB+S		
+775	Polycythemia Vera	PV	V617F+			no treatment or hydroxyurea	PB+S		
+751	Polycythemia Vera	PV	V617F-			no treatment or hydroxyurea	PB+S		

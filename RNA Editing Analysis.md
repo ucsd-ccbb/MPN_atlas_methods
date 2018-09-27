@@ -5,7 +5,9 @@
  
 Each sample is represented by one pair of forward- and reverse-read fastq files.  `$rootdir` is the directory on the system where the software tools are installed, `$resource` is the directory where tool resources such as indices and genome files are stored, and `$workspace` is the working directory for the analysis. The below steps are bash scripts designed to be run from the command line on Ubuntu Linux 14.04 or higher.  Elements of this approach were adapted from Ramaswami G, Lin W, Piskol R, Tan MH, Davis C, Li JB. Accurate identification of human Alu and non-Alu RNA editing sites. Nat Methods. 2012 Jun;9(6):579-81.
 
-Begin by setting up the variables:
+## Initialization
+
+Begin by installing each of the software tools listed in the references, as well as their supporting files (see download source information below), and setting up the variables:
 	
 	# Environment
 	cpu="$(cat /proc/cpuinfo | grep processor | wc -l)
@@ -58,6 +60,8 @@ Begin by setting up the variables:
 	
 	# bedtools
 	intersectBed=$rootdir/bedtools2/bin/intersectBed
+	
+## Per-Sample Analysis
 	
 Run the following steps are run once for each sample.  The `$sample` variable is set to the base part of the fastq pair's file names; for example, for a pair of fastq files named `mysample1_R1.fq` and `mysample1_R2.fq`, `$sample` = `mysample1`.  
 
@@ -437,7 +441,7 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			> $workspace/"$sample"_rna_edit.alu.vcf
 
 19. Repeat the filtering commands in step 12 but replace the input `"$sample"_raw_variants.rmhex.nonalu.txt` with the earlier-produced input `"$sample"_raw_variants.rmhex.txt` that does NOT exclude variants in known Alu elements.  To reflect this, elide `nonalu` from the names of all output files produced in this re-run.  Thus, the output of this work will be a file of the name format `"$sample"_raw_variants.rmhex.rmsk.rmintron.rmhom.rmblat.txt`.
-20. For later use, capture variants whose locations both are in known Alu elements and are covered in the DNA sequencing to at least the minimum read depth, but whose genomic locations were NOT found to contain DNA variants:
+20. For later use, capture additionally filtered variants whose locations are covered in the DNA sequencing to at least the minimum read depth, but whose genomic locations were NOT found to contain DNA variants:
 
 		# capture in VCF format all additionally filtered variants
 		awk '{OFS="\t";print $1,$2,$2}' \
@@ -475,7 +479,64 @@ Run the following steps are run once for each sample.  The `$sample` variable is
 			> $workspace/"$sample"_rna_edit.final.vcf
 			
 	
-There is now a suite of vcf files for each sample to be used in further analysis.  
+There is now a suite of vcf files for each sample to be used in further investigation.  At this point, analysis steps switch from per-sample to per-group. 
+
+## Per-Group Analysis
+
+	# TODO: What version of Oncotator?
+
+Ensure that the default datasource corpus for Oncotator has been downloaded from [ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/oncotator/oncotator\_v1\_ds\_April052016.tar.gz](ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/oncotator/oncotator_v1_ds_April052016.tar.gz) .
+
+In this section, a "group" is defined as the unique combination of disease state (disease or normal) and alu state (in known Alu elements or not in known Alu elements); therefore, there are four groups: disease-alu, disease-nonalu, normal-alu, and normal-nonalu.  Perform the following steps once for each group.
+
+1. Set the `$condition` variable to `disease` or `normal` and the `$alu_state` variable to `alu` or `nonalu` as appropriate for the group.
+2. Based on the metadata for the experiment, identify all samples that are from the current condition (disease or normal).
+3. Store the names of the `"$sample"_"$alu_state"_rnaseq_vars.vcf` files (containing per-sample information on variants that are in the relevant Alu state) for all samples in the current condition in the variable `$vcf_list` and set `$var_type` to `all`.
+4. Create a single merged file of variants (across samples):
+
+		# Note that bgzip is distributed with samtools
+		for vcf in $(cat $vcf_list); do bgzip $vcf; tabix -p vcf $vcf.gz; done
+		bcftools merge *.vcf.gz > \
+		"$condition"_"$alu_state"_merged_"$var_type"_rnaedit_sites.vcf.gz
+		
+5. Store the names of the `"$sample"_"$alu_state"_rnaedit_sites.vcf` files (containing per-sample information on variants that are in the relevant Alu state AND at known rna-editing sites) for all samples in the current condition in the variable `$vcf_list` and set `$var_type` to `known`, then rerun step 4 to merge these files.
+
+		# TODO: Is it always the "$sample"_rna_edit.final.vcf file, 
+		or is it sometimes the "$sample"_rna_edit.alu.vcf file, 
+		depending on alu_state?
+
+6. Store the names of the `"$sample"_rna_edit.final.vcf` files (containing per-sample information on additionally filtered variants whose locations are covered in the DNA sequencing to at least the minimum read depth, but whose genomic locations were NOT found to contain DNA variants) for all samples in the current condition in the variable `$vcf_list` and set `$var_type` to `rna_edit.final`, then rerun step 4 to merge these files.
+7. Merge the outputs of steps 3 and 6 to create a list of novel rna editing sites for this group:
+
+		intersectBed \
+			-wa \
+			-header \
+			-a "$condition"_"$alu_state"_merged_all_rnaedit_sites.vcf.gz \
+			-b "$condition"_"$alu_state"_merged_rna_edit.final_rnaedit_sites.vcf.gz \
+			| bgzip > "$condition"_"$alu_state"_merged_novel_rnaedit_sites.vcf.gz
+			
+8. Set `$variants_to_annotate` to `"$condition"_"$alu_state"_merged_novel_rnaedit_sites` and annotate the novel rna editing sites for this group using Oncotator:
+
+		oncotator -i VCF --skip-no-alt \
+			--db-dir oncotator_v1_ds_April052016 \
+			"$variants_to_annotate".vcf.gz \
+			"$variants_to_annotate".oncotator.maf hg19
+			
+		awk -F '\t' -v OFS='\t' '{ if (($1 != "Unknown") && ($9 != "Intron") \
+			&& ($9 != "IGR") && ($9 != "Silent") && ($9 != "RNA") && \
+			($9 != "lincRNA") && ($9 !~ '/Flank/') && ($9 !~ '/UTR/') && \
+			($366 != "pseudogene") && ($366 != "polymorphic_pseudogene") && \
+			($14 == "") && (($84 <= 0.05) || ($84 == "")) && \
+			(($147 <= 0.05) || ($147 == ""))) \
+			{ print $1, $5, $6, $7, $9, $10, $11, $12, $13, $14, $16, $17, \
+			$42, $80, $81, $84, $147, $288}}' \
+			"$variants_to_annotate".oncotator.maf \
+			| uniq \
+			> "$variants_to_annotate".oncotator.filt.maf
+			
+9. Set `$variants_to_annotate` to `"$condition"_"$alu_state"_merged_known_rnaedit_sites` and rerun step 8 to annotate the known rna editing sites for this group using Oncotator.
+
+The results of step 8 are inputs to the `rnaEditNovel.R` script, which produces Figure 4c, while the results of step 9 are inputs to the `rnaedit.known.comparison.R` script, which produces Figures 4a, 4b, and 4d as well as Extended Data Figures 4a-c; see comments in those scripts for details on which files are used in which parts of the scripts.  One of the outputs of `rnaedit.known.comparison.R` (`RNAedit_known_Normal_MPN_merged_filtered_09172018.maf`) is then used as the input to `differentiallyEditedGenes.R`, which produces outputs used in the creation of Figures 4f-g and Extended Data Figures 4g and 4i.
 
 
 ## Software References
@@ -486,4 +547,8 @@ There is now a suite of vcf files for each sample to be used in further analysis
 * **GATK**: DePristo MA, Banks E, Poplin R, Garimella KV, Maguire JR, Hartl C, Philippakis AA, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell TJ, Kernytsky AM, Sivachenko AY, Cibulskis K, Gabriel SB, Altshuler D, Daly MJ. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011 May;43(5):491-8.
 * **SNPiR**: https://github.com/rpiskol/SNPiR .
 * **bedtools**: Quinlan AR, Hall IM. BEDTools: a flexible suite of utilities for comparing genomic features. Bioinformatics. 2010 Mar 15;26(6):841-2.
-
+* **Tabix**: Li H. Tabix: fast retrieval of sequence features from generic TAB-delimited files. Bioinformatics. 2011 Mar 1;27(5):718-9.
+* **bcftools**: https://github.com/samtools/bcftools .
+* **Oncotator**: Ramos AH, Lichtenstein L, Gupta M, Lawrence MS, Pugh TJ, Saksena G, Meyerson M, Getz G. Oncotator: cancer variant annotation tool. Hum Mutat. 2015
+Apr;36(4):E2423-9.
+* **R**: R Core Team . R: A language and environment for statistical computing. (2016) R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/ .
