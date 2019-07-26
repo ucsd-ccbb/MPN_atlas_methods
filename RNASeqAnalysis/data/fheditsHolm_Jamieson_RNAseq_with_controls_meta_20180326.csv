@@ -1,0 +1,142 @@
+﻿Sample,ID,Condition,Condition_code,Condition_code2,Treatment,Treatment_code,Treatment_code2,Tissue Type,Tissue,Cell type,Mutation,Mutation_code,Age,Age_code,Sex,Patient_ID
+X735.PB.Stem,735.PB.Stem,AML,AML,AML,prev. chemo (not recent),previous_chemo,other,Peripheral Blood,PB,Stem,None,None,77,Aged,F,735
+X735.PB.Prog,735.PB.Prog,AML,AML,AML, prev. chemo (not recent),previous_chemo,other,Peripheral Blood,PB,Progenitor,None,None,77,Aged,F,735
+X591.PB.Stem,591.PB.Stem,AML,AML,AML,prev. on chemo and hydroxyurea,previous_chemo,other,Peripheral Blood,PB,Stem,JAK2 V617F-,JAK2_neg,80,Aged,M,591
+X591.BM.Stem,591.BM.Stem,AML,AML,AML,prev. on chemo and hydroxyurea,previous_chemo,other,Bone Marrow,BM,Stem,JAK2 V617F-,JAK2_neg,81,Aged,M,591
+X591.BM.Prog,591.BM.Prog,AML,AML,AML,prev. on chemo and hydroxyurea,previous_chemo,other,Bone Marrow,BM,Progenitor,JAK2 V617F-,JAK2_neg,81,Aged,M,591
+X591.Stroma,591.Stroma,AML,AML,AML,prev. on chemo and hydroxyurea,previous_chemo,other,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,81,Aged,M,591
+X672A.PB.Stem,672A.PB.Stem,AML (post-MF),AML (post-MF),AML,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral Blood,PB,Stem,None,None,76,Aged,M,672A
+X672A.PB.Prog,672A.PB.Prog,AML (post-MF),AML (post-MF),AML,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral Blood,PB,Progenitor,None,None,76,Aged,M,672A
+X672B.PB.Stem,672B.PB.Stem,AML (post-MF),AML (post-MF),AML,vidaza,other,other,Peripheral Blood,PB,Stem,None,None,76,Aged,M,672B
+X672B.PB.Prog,672B.PB.Prog,AML (post-MF),AML (post-MF),AML,vidaza,other,other,Peripheral Blood,PB,Progenitor,None,None,76,Aged,M,672B
+X727.PB.Prog,727.PB.Prog,AP CML,AP CML,CML,no treatment,Untreated,Untreated,Peripheral Blood,PB,Progenitor,BCR-ABL+,BCRABL_pos,56,Young,M,727
+X727.PB.Stem,727.PB.Stem,AP CML,AP CML,CML,no treatment,Untreated,Untreated,Peripheral Blood,PB,Stem,BCR-ABL+,BCRABL_pos,56,Young,M,727
+X608.BM.Stem,608.BM.Stem,BC-CML,BC-CML,CML,imatinib,other,other,Bone Marrow,BM,Stem,Ph+,Ph_plus,52,Young,M,608
+X608.BM.Prog,608.BM.Prog,BC-CML,BC-CML,CML,imatinib,other,other,Bone Marrow,BM,Progenitor,Ph+,Ph_plus,52,Young,M,608
+X703.PB.Stem,703.PB.Stem,CML,CML,CML,"allopurinol, hydroxyurea, azithro",other,other,Peripheral Blood,PB,Stem,Ph+,Ph_plus,48,Young,M,703
+X703.PB.Prog,703.PB.Prog,CML,CML,CML,"allopurinol, hydroxyurea, azithro",other,other,Peripheral Blood,PB,Progenitor,Ph+,Ph_plus,48,Young,M,703
+X616.BM.Stem,616.BM.Stem,CP CML,CP CML,CML,dasatinib,other,other,Bone Marrow,BM,Stem,9;22;15 xlocation,translocation,36,Young,M,616
+X616.BM.Prog,616.BM.Prog,CP CML,CP CML,CML,dasatinib,other,other,Bone Marrow,BM,Progenitor,9;22;15 xlocation,translocation,36,Young,M,616
+X571.BM.Stem,571.BM.Stem,CP-CML,CP-CML,CML,untreated,none,none,Bone Marrow,BM,Stem,Ph+,Ph_plus,53,Young,M,571
+X571.BM.Prog,571.BM.Prog,CP-CML,CP-CML,CML,untreated,Untreated,Untreated,Bone Marrow,BM,Progenitor,Ph+,Ph_plus,53,Young,M,571
+X571.Stroma,571.Stroma,CP-CML,CP-CML,CML,untreated,Untreated,Untreated,Stroma,Stroma,Stroma,Ph+,Ph_plus,53,Young,M,571
+X19_MDStoAML,19_MDStoAML,de novo AML,Diseased,de novo AML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50120
+X20_MDStoAML,20_MDStoAML,de novo AML,Diseased,de novo AML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50113
+X48_MDStoAML,48_MDStoAML,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50261
+X65_MDStoAML,65_MDStoAML,MDS,Diseased,MDS,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,pt318
+X36,36,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50124
+X97,97,MDS,Diseased,MDS,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,pt56
+X42,42,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50200
+X96,96,MDS,Diseased,MDS,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,pt353
+X87,87,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO10008 (Bleakley?)
+X91,91,MDS,Diseased,MDS,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50435
+X89,89,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,1690-61
+X102,102,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,010408 JG
+X107,107,sAML,Diseased,sAML,NA,NA,NA,Bone Marrow,BM,Progenitor,,,,,,RO50240
+X431.PB.Stem,431.PB.Stem,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Peripheral Blood,PB,Stem,JAK2 V617F+,JAK2_pos,63,Mid,M,431
+X431.PB.Prog,431.PB.Prog,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Peripheral Blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,63,Mid,M,431
+X638.BM.Stem,638.BM.Stem,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,38,Young,M,638
+X638.BM.Prog,638.BM.Prog,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Peripheral Blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,38,Young,M,638
+X638.Stroma,638.Stroma,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,38,Young,M,638
+X641.Stroma,641.Stroma,ET,ET,ET,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,"JAK2 V617F+, CALR-",JAK2_pos,81,Aged,M,641
+X744.PB.Stem,744.PB.Stem,high risk myelofibrosis,high_risk_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,74,Aged,M,744
+X744.PB.Prog,744.PB.Prog,high risk myelofibrosis,high_risk_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,74,Aged,M,744
+X576.PB.Stem,576.PB.Stem,high risk myelofibrosis,high_risk_myelofibrosis,MF,prev. on pacritinib,pacritinib,pacritinib,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,65,Mid,F,576
+X576.PB.Prog,576.PB.Prog,high risk myelofibrosis,high_risk_myelofibrosis,MF,prev. on pacritinib,pacritinib,pacritinib,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,65,Mid,F,576
+X767.BM.Stem,767.BM.Stem,int-2 myelofibrosis,int2_myelofibrosis,MF,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,79,Aged,F,767
+X767.BM.Prog,767.BM.Prog,int-2 myelofibrosis,int2_myelofibrosis,MF,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Progenitor,JAK2 V617F+,JAK2_pos,79,Aged,F,767
+X767.Stroma,767.Stroma,int-2 myelofibrosis,int2_myelofibrosis,MF,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,79,Aged,F,767
+X721.PB.34plus,721.PB.34+,int-2 myelofibrosis,int2_myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,CD34pos,JAK2 V617F+,JAK2_pos,71,Aged,F,721
+X670A.PB.Stem,670A.PB.Stem,int-2 myelofibrosis,int2_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,72,Aged,M,670A
+X670A.PB.Prog,670A.PB.Prog,int-2 myelofibrosis,int2_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,72,Aged,M,670A
+X670B.PB.Stem,670B.PB.Stem,int-2 myelofibrosis,int2_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,73,Aged,M,670B
+X670B.PB.Prog,670B.PB.Prog,int-2 myelofibrosis,int2_myelofibrosis,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,73,Aged,M,670B
+X600.PB.Stem,600.PB.Stem,int-2 myelofibrosis (post-ET),int2_myelofibrosis_postET,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,66,Mid,M,600
+X600.PB.Prog,600.PB.Prog,int-2 myelofibrosis (post-ET),int2_myelofibrosis_postET,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,66,Mid,M,600
+X600.BM.Stem,600.BM.Stem,int-2 myelofibrosis,int2_myelofibrosis_postET,MF,NS Pharma,JAK2inhibitor,JAK2inhibitor,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,67,Mid,M,600
+X600.BM.Prog,600.BM.Prog,int-2 myelofibrosis,int2_myelofibrosis_postET,MF,NS Pharma,JAK2inhibitor,JAK2inhibitor,Bone Marrow,BM,Progenitor,JAK2 V617F+,JAK2_pos,67,Mid,M,600
+X580.BM.Stem,580.BM.Stem,int-2 myelofibrosis (post-ET),int2_myelofibrosis_postET,MF,Jakafi,Jakafi,JAK2inhibitor,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,76,Aged,F,580
+X580.BM.Prog,580.BM.Prog,int-2 myelofibrosis (post-ET),int2_myelofibrosis_postET,MF,Jakafi,Jakafi,JAK2inhibitor,Bone Marrow,BM,Progenitor,JAK2 V617F+,JAK2_pos,76,Aged,F,580
+X725.PB.Prog,725.PB.Prog,int-2 myelofibrosis (post-ET),int2_myelofibrosis_postET,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,45,Young,M,725
+X724.PB.Stem,724.PB.Stem,int-2 myelofibrosis (post-PV),int2_myelofibrosis_postPV,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,82,Aged,M,724
+X724.PB.Prog,724.PB.Prog,int-2 myelofibrosis (post-PV),int2_myelofibrosis_postPV,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,82,Aged,M,724
+X736.BM.Stem,736.BM.Stem,int-2 myelofibrosis (post-PV),int2_myelofibrosis_postPV,MF,no treatment,Untreated,Untreated,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,49,Young,F,736
+X736.BM.Prog,736.BM.Prog,int-2 myelofibrosis (post-PV),int2_myelofibrosis_postPV,MF,no treatment,Untreated,Untreated,Bone Marrow,BM,Progenitor,JAK2 V617F+,JAK2_pos,49,Young,F,736
+X558.Stroma,558.Stroma,int-2 myelofibrosis (post-PV),int2_myelofibrosis_postPV,MF,NS pharma JAK2 inhibitor,JAK2inhibitor,JAK2inhibitor,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,49,Young,F,558
+X566.PB.Stem,566.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F-,JAK2_neg,80,Aged,M,566
+X566.PB.Prog,566.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F-,JAK2_neg,80,Aged,M,566
+X407.PB.Stem,407.PB.Stem,myelofibrosis,myelofibrosis,MF,SAR302503,JAK2inhibitor,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F-,JAK2_neg,64,Mid,F,407
+X407.PB.Prog,407.PB.Prog,myelofibrosis,myelofibrosis,MF,SAR302503,JAK2inhibitor,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F-,JAK2_neg,64,Mid,F,407
+X569.PB.Stem,569.PB.Stem,myelofibrosis,myelofibrosis,MF,JAK2 inhibitor - SAR302503,JAK2inhibitor,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2V617F+,JAK2_pos,66,Mid,F,569
+X569.PB.Prog,569.PB.Prog,myelofibrosis,myelofibrosis,MF,JAK2 inhibitor - SAR302503,JAK2inhibitor,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2V617F+,JAK2_pos,66,Mid,F,569
+X581.PB.Stem,581.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2V617F+,JAK2_pos,83,Aged,M,581
+X581.PB.Prog,581.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2V617F+,JAK2_pos,83,Aged,M,581
+X599.PB.Stem,599.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,52,Young,F,599
+X599.PB.Prog,599.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,52,Young,F,599
+X621.PB.Stem,621.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,60,Mid,M,621
+X621.PB.Prog,621.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,60,Mid,M,621
+X567.PB.Stem,567.PB.Stem,myelofibrosis,myelofibrosis,MF,pacritinib,pacritinib,pacritinib,Peripheral blood,PB,Stem,JAK2 V617F-,JAK2_neg,62,Mid,M,567
+X560.PB.Stem,560.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2V617F+,JAK2_pos,71,Aged,M,560
+X560.PB.Prog,560.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2V617F+,JAK2_pos,71,Aged,M,560
+X666.PB.Stem,666.PB.Stem,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,71,Aged,F,666
+X666.PB.Prog,666.PB.Prog,myelofibrosis,myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,71,Aged,F,666
+X422.PB.Stem,422.PB.Stem,myelofibrosis (from MDS),myelofibrosis_fromMDS,MF,Shh inhibitor (Pfizer),Shh_inhibitor,Shh_inhibitor,Peripheral blood,PB,Stem,JAK2 V617F-,JAK2_neg,63,Mid,F,422
+X732.PB.Prog,732.PB.Prog,myelofibrosis (post-ET),myelofibrosis_postET,MF,no treatment,Untreated,Untreated,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,65,Mid,F,732
+X664.BM.Stem,664.BM.Stem,myelofibrosis (post-ET),myelofibrosis_postET,MF,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Stem,JAK2 V617F-,JAK2_neg,42,Young,F,664
+X664.BM.Prog,664.BM.Prog,myelofibrosis (post-ET),myelofibrosis_postET,MF,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Progenitor,JAK2 V617F-,JAK2_neg,42,Young,F,664
+X664.Stroma,664.Stroma,myelofibrosis (post-ET),myelofibrosis_postET,MF,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,42,Young,F,664
+X428.PB.Stem,428.PB.Stem,myelofibrosis (post-ET),myelofibrosis_postET,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F-,JAK2_neg,64,Mid,F,428
+X428.PB.Prog,428.PB.Prog,myelofibrosis (post-ET),myelofibrosis_postET,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F-,JAK2_neg,64,Mid,F,428
+X668.PB.Stem,668.PB.Stem,myelofibrosis (post-PV),myelofibrosis_postPV,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,49,Young,F,668
+X668.PB.Prog,668.PB.Prog,myelofibrosis (post-PV),myelofibrosis_postPV,MF,Jakafi,Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,49,Young,F,668
+X368_ACAGTG_S0,368_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt368
+X401_ACAGTG_S0,401_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt401
+X4040_GTGAAA_S0,4040_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4040
+X410_ACAGTG_S0,410_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt410
+X415_ACAGTG_S0,415_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt415
+X416_ACAGTG_S0,416_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt416
+X4188_GTGAAA_S0,4188_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4188
+X4215_GTGAAA_S0,4215_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4215
+X4218_GTGAAA_S0,4218_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4218
+X4259_GTGAAA_S0,4259_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4259
+X426_ACAGTG_S0,426_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt426
+X4279_GTGAAA_S0,4279_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4279
+X26_1,26_1,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,410-HSC
+X26_3,26_3,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,2130-HSC
+X26_2,26_2,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,401-HSC
+X26_4,26_4,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,4532-HSC
+X26_5,26_5,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,4698-HSC
+X26_7,26_7,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,439-HSC
+X26_6,26_6,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,4742-HSC
+X27_8,27_8,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stem,,,,,,368-HSC
+X380_ACAGTG_S0,380_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt380
+X4066_GTGAAA_S0,4066_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4066
+X4018_GTGAAA_S0,4018_GTGAAA_S0,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt4018
+X402_ACAGTG_S0,402_ACAGTG_S0,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Progenitor,,,,,,pt402
+X4689sp1,4689sp1,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,4689s-p1
+X439sp1,439sp1,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,439s-p1
+X4727sp1,4727sp1,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,4742s-p1
+X586sp1,586sp1,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,586s-p1
+X22_15,22_15,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,2130s-p1
+X22_10,22_10,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,369s-p1
+X22_16,22_16,Young,Normal,Young_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,4532s-p1
+X22_13,22_13,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,620s-p1
+X22_14,22_14,Aged,Normal,Aged_Normal,untreated,Healthy Control,Healthy Control,Bone Marrow,BM,Stroma,,,,,,654s-p1
+X598.PB.Stem,598.PB.Stem,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Peripheral blood,PB,Stem,JAK2 V617F+,JAK2_pos,34,Young,F,598
+X598.PB.Prog,598.PB.Prog,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,34,Young,F,598
+X575A.PB.Prog,575A.PB.Prog,polycythemia vera,polycythemia vera,PV,hydroxyurea,hydroxyurea,hydroxyurea,Peripheral blood,PB,Progenitor,JAK2 V617F+,JAK2_pos,43,Young,F,575A
+X575.Stroma,575.Stroma,polycythemia vera,polycythemia vera,PV,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,43,Young,F,575
+X662.BM.Prog,662.BM.Prog,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Bone Marrow,BM,Progenitor,JAK2 V617F-,JAK2_neg,70,Aged,F,662
+X662.Stroma,662.Stroma,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,70,Aged,F,662
+X690.BM.Prog,690.BM.Prog,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Bone Marrow,BM,Progenitor,JAK2 V617F-,JAK2_neg,60,Mid,M,690
+X690.Stroma,690.Stroma,polycythemia vera,polycythemia vera,PV,no treatment,Untreated,Untreated,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,60,Mid,M,690
+X689.BM.Stem,689.BM.Stem,polycythemia vera,polycythemia vera,PV,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Stem,JAK2 V617F+,JAK2_pos,68,Mid,M,689
+X689.BM.Prog,689.BM.Prog,polycythemia vera,polycythemia vera,PV,hydroxyurea,hydroxyurea,hydroxyurea,Bone Marrow,BM,Progenitor,JAK2 V617F+,JAK2_pos,68,Mid,M,689
+X689.Stroma,689.BM.Strom,polycythemia vera,polycythemia vera,PV,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,68,Mid,M,689
+X562.PB.Stem,562.PB.Stem,PV,PV,PV,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Stem,JAK2V617F+,JAK2_pos,59,Young,M,562
+X562.PB.Prog,562.PB.Prog,PV,PV,PV,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Peripheral blood,PB,Progenitor,JAK2V617F+,JAK2_pos,59,Young,M,562
+X728.Stroma,728.Stroma,PV,PV,PV,hydroxyurea,hydroxyurea,hydroxyurea,Stroma,Stroma,Stroma,JAK2 V617F+,JAK2_pos,68,Mid,M,728
+X730.Stroma,730.Stroma,PV,PV,PV,levothyroxine,levothyroxine,other,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,46,Young,F,730
+X573.BM.Stem,573.BM.Stem,"systemic mastocytosis, myelofibrosis",systemic_mastocytosis_myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Bone Marrow,BM,Stem,JAK2 V617F-,JAK2_neg,79,Aged,M,573
+X573.BM.Prog,573.BM.Prog,"systemic mastocytosis, myelofibrosis",systemic_mastocytosis_myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Bone Marrow,BM,Progenitor,JAK2 V617F-,JAK2_neg,79,Aged,M,573
+X573.Stroma,573.Stroma,"systemic mastocytosis, myelofibrosis",systemic_mastocytosis_myelofibrosis,MF,Jakafi (ruxolitinib phosphate),Jakafi,JAK2inhibitor,Stroma,Stroma,Stroma,JAK2 V617F-,JAK2_neg,79,Aged,M,573
