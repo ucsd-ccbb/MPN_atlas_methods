@@ -2,7 +2,7 @@
 
 ### Documented source code for methods for:
 
-#### Innate Immune Anti-viral Deaminase Deregulation Fuels Pre-leukemia Stem Cell Evolution
+## Innate Immune Anti-viral Deaminase Deregulation Fuels Pre-leukemia Stem Cell Evolution
 
 Qingfei Jiang[1], Jane Isquith[1], Frida Holm[1], Adam Mark[2], Cayla Mason[1], Eduardo Reynoso[1], Yudou He[3], Wenxue Ma[1], Phoebe Mondala[1], Shawn Ali[1], Isabella Morris[1], Raymond Diep[1], Jessica Pham[1], Chanond Nasamran[2], Guorong Xu[2], Roman Sasik[2], Sara Brin Rosenthal[2], Amanda Birmingham[2], Sanja Coso[1], Gabriel Pineda[1], Leslie Crews[1], Thomas Whisenant[2], Ludmil B. Alexandrov[3], Kathleen M. Fisch[2] and Catriona Jamieson[1]
 
@@ -24,7 +24,7 @@ While innate immune anti-viral deaminases inhibit viral replication, primate-spe
 * SigProfilerExtractor
   https://github.com/AlexandrovLab/SigProfilerExtractor
   
-#### Reversal of Malignant ADAR1 Splice Isoform Switching with Rebecsinib
+## Reversal of Malignant ADAR1 Splice Isoform Switching with Rebecsinib
 
 Leslie A. Crews[1,2], Wenxue Ma[1], Luisa Ladel[1], Jessica Pham[1], Larisa Balaian[1,2], S. Kathleen Steel[1], Phoebe K. Mondala[1], Raymond H. Diep[1], Christina N. Wu[1], Cayla N. Mason[1], Inge van der Werf[1], Isabelle Oliver[1], Eduardo Reynoso[1], Gabriel Pineda[1], Thomas Whisenant[3], Peggy Wentworth[1], James J. La Clair[4], Qingfei Jiang[1], Michael D. Burkart[4], and Catriona H.M. Jamieson[1,2]
 
